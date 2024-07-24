@@ -3,6 +3,16 @@ import { WebGPUModel } from './wasmllm';
 export const SUPPORTED_LOCAL_MODELS: {
   [key: string]: WebGPUModel;
 } = {
+  "TinyLlama-1.1B": {
+    simpleName: "TinyLlama 1.1B",
+    modelName: "TinyLlama-1.1B-Chat-q4f342_1",
+    rootUrl:
+      "https://huggingface.co/cfahlgren1/wasm-TinyLlama-1.1B-Chat-q4f342_1",
+    modelParamsUrl:
+      "https://huggingface.co/cfahlgren1/wasm-TinyLlama-1.1B-Chat-q4f342_1/resolve/main/params",
+    wasmUrl:
+      "https://huggingface.co/cfahlgren1/wasm-TinyLlama-1.1B-Chat-q4f342_1/resolve/main/TinyLlama-1.1B-Chat-v1.0-q4f32_1-webgpu.wasm",
+  },
   "dolphin-2.2.1": {
     simpleName: "Dolphin 2.2.1",
     modelName: "dolphin-2.2.1-mistral-7b-q4f32_1",
@@ -13,6 +23,7 @@ export const SUPPORTED_LOCAL_MODELS: {
     wasmUrl:
       "https://huggingface.co/hrishioa/mlc-chat-dolphin-2.2.1-mistral-7b-q4f32_1/resolve/main/dolphin-2.2.1-mistral-7b-q4f32_1-webgpu.wasm",
   },
+
   "openhermes-2.5": {
     simpleName: "OpenHermes 2.5",
     modelName: "OpenHermes-2.5-Mistral-7B-q4f32_1",

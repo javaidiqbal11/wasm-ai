@@ -23,7 +23,7 @@ const localModelName: keyof typeof SUPPORTED_LOCAL_MODELS = "dolphin-2.2.1";
 
 export function Chat({ id, initialMessages, className }: ChatProps) {
   const selectedModel = SUPPORTED_LOCAL_MODELS[localModelName];
-    const {
+  const {
     loadingMessage,
     loadingProgress,
     messages,
@@ -33,25 +33,27 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
     isLoading,
     input,
     setInput,
-  // Apologies eslint this is just me showing off
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+    // Apologies eslint this is just me showing off
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   } = USE_LOCAL_CHAT ? useLocalChat({
     model: selectedModel,
     initialMessages: initialMessages,
     initialInput: "",
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  }) : {...useChat({
-    initialMessages,
-    id,
-    body: {
-      id,
-    },
-    onResponse(response) {
-      if (response.status === 401) {
-        toast.error(response.statusText)
-      }
-    }
-  }), loadingMessage: "You are now talking to a cloud model. Boo!", loadingProgress: 100};
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+  }) : {
+      ...useChat({
+        initialMessages,
+        id,
+        body: {
+          id,
+        },
+        onResponse(response) {
+          if (response.status === 401) {
+            toast.error(response.statusText)
+          }
+        }
+      }), loadingMessage: "You are now talking to a cloud model. Boo!", loadingProgress: 100
+    };
 
   return (
     <>

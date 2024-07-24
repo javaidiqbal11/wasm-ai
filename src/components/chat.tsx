@@ -19,7 +19,7 @@ export interface ChatProps extends React.ComponentProps<"div"> {
 // Edit this line to change if you're calling a local model or not. Make sure to set an OPENAI_API_KEY in the env file!
 const USE_LOCAL_CHAT = true;
 // Select your local model. You might be able to hotswap this at runtime, haven't tested.
-const localModelName: keyof typeof SUPPORTED_LOCAL_MODELS = "TinyLlama-1.1B";
+const localModelName: keyof typeof SUPPORTED_LOCAL_MODELS = "glaive-coder";
 
 export function Chat({ id, initialMessages, className }: ChatProps) {
   const selectedModel = SUPPORTED_LOCAL_MODELS[localModelName];

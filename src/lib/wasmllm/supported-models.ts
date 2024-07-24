@@ -3,7 +3,7 @@ import { WebGPUModel } from './wasmllm';
 export const SUPPORTED_LOCAL_MODELS: {
   [key: string]: WebGPUModel;
 } = {
-  "TinyLlama-1.1B": {
+  "tinyllama-1.1b": {
     simpleName: "TinyLlama 1.1B",
     modelName: "TinyLlama-1.1B-Chat-q4f342_1",
     rootUrl:
